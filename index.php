@@ -15,6 +15,7 @@
 		use Sop\CryptoEncoding\PEM;
 		use kornrunner\keccak;
 		
+		# Note that you will need ganache for this portion, Install ganache or comment it out. your choice
 		use Web3\Web3;
 		$web3 = new Web3('http://localhost:7545');
 		$eth = $web3->eth;
@@ -24,9 +25,10 @@
 		$personal->listAccounts(function($err, $acc) use (&$accounts){
 			$accounts = $acc;
 		});
+		
 		#echo "Account 1: $accounts[0]";
 		
-		// Private key gen starts here
+		# Private key gen starts here
 
 		$config = [
 			'private_key_type' => OPENSSL_KEYTYPE_EC,
